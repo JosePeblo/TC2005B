@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola world</title>
+</head>
+<body style="font-family: sans-serif; padding: 0 10% 0 10%; text-align: justify; text-justify: inter-word;">
+    <header>
+        <h1>JOSEPABLO.SPOTBLOG</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#me">Sobre mi</a></li>
+            <li><a href="#contact">Datos de contacto</a></li>
+            <li><a href="#questions">Preguntas a responder</a></li>
+            <li><a href="#islsp">Sobre el ciclo de vida y desarrollo de los sistemas de información:</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article>
+            <h2 id="me">Sobre mi</h2>
+            <p>
+                Hola, me llamo José Pablo Martínez Valdivia. Estudio ingeniería en tecnologías computacionales en el Tec 
+                de Monterrey campus Querétaro.
+                Me gustan los videojuegos, la música y cocinar. 
+            </p>
+            <h2 id="contact">Datos de contacto</h2>
+            <h3>Matrícula</h3>
+            <p>A01275676</p>
+            <h3>Correo</h3>
+            <p>a01275676@tec.mx</p>
+        </article>
+        <article>
+            <h2 id="questions">Preguntas a responder</h2>
+            <h3>¿Cuál es la diferencia entre Internet y la World Wide Web? <a href="https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,asienta%20sobreesa%20red%20de%20computadoras.">Ref*</a></h3>
+            <p>
+                El internet se refiere a las computadoras que están conectadas en la red global,
+                la "World Wide Web" se refiere a los sitios que existen en esta red.
+            </p>
+            <h3>¿Cuáles son las partes de un URL? <a href="https://edytapukocz.com/url-partes-ejemplos-facil/">Ref*</a></h3>
+
+            <ul>
+                <li>Un url se compone de un protocolo como: <b>http://</b>, <b>https://</b>, <b>mqtt://</b></li><br>
+                <li>Un sub-dominio como: <b>www</b></li><br>
+                <li>Un dominio, que es el nombre de la página o la dirección ip de esta como: <b>google.com</b></li><br>
+                <li>Una ruta la cual se separa por <b>/</b> como si se tratara de directorios como: <b>/cursos/progra/etc</b></li><br>
+                <li>Parametros los cuales son una serie de llaves y valores la cual se comienza con un <b>?</b> y después se nombra la llave, un signo de<b> =</b> y el valor. Se coloca un <b>&</b> para colocar un parámetro nuevo <b>?nombre=Juan&apellido=Monroy</b></li><br>
+                <li>La etiqueta que se denota por un <b>#</b> y después se nombra el id de un elemento al que se quiere hacer scroll instantáneamente <b>#references</b></li><br>
+            </ul>
+
+            <h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE? <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Methods">Ref*</a></h3>
+            <p>
+                El protocolo http nos provee de estos métodos para la transmisión de información a través de la web
+                <ul>
+                    <li><b>Get</b> se utiliza para recuperar datos</li>
+                    <li><b>Head</b> es como Get pero omitiendo el cuerpo de la respuesta</li>
+                    <li><b>Post</b> se utiliza para enviar informacion al servidor</li>
+                    <li><b>Put</b> envia informacion y la reemplaza, a diferencia de post, usar este metodo no crea informacion adicional en una petición</li>
+                    <li><b>Patch</b> es como Put pero este método puede reemplazar partes parciales de la informacion que quiere cambiar</li>
+                    <li><b>Delete</b> se utiliza para borrar un registro específico</li>
+                </ul>
+                
+            </p>
+            <h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
+            <p>
+                El método <b>POST</b> ya que este es el que está diseñado para enviar información.
+            </p>
+            <h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
+            <p>
+                El método <b>GET</b> porque es el que se utiliza para acceder a recursos
+            </p>
+            <h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error? <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status">Ref*</a></h3>
+            <p>
+                El código 200 de http significa éxito en la solicitud
+            </p>
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+            <p>
+                No, ya que es probable que si se encontró con un error 404 (not found) es porque intentó entrar a un recurso que no existe y al que no se debería poder llegar desde la página 
+                o está intentando acceder a un recurso prohibido el cual por diseño responde con que no existe por cuestiones de seguridad.
+            </p>
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+            <p>
+                Sí, ya que los errores del rango de los 500 corresponden a un error de servidor el cual tiene que ver con el como se programó este.
+            </p>
+            <h3>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Ref*</a></h3>
+            <p>
+                Que ya no se debe utilizar porque hay nuevas formas de hacer las cosas, sin embargo puede que se siga funcionando por cuestiones de compatibilidad con viejos sitios y navegadores <br>
+                &lt;s&gt;&lt;/s&gt; y &lt;strile&gt;&lt;/strike&gt; han sido abandonados a dabor de tachar el texto con hojas de estilos <br>
+                <s>Ejemplo con s</s> <br>
+                <strike>Ejemplo con strike</strike> <br>
+                Lo mismo con &lt;font&gt;&lt;/font&gt; que se usaba para cambiar aspectos de la fuente de un texto
+                <font size="4" color="#6700112">Como este</font>
+                La etiqueta &lt;dir&gt;&lt;/dir&gt; fue reemplazada por &lt;ul&gt;&lt;/ul&gt; para hacer listas
+            </p>
+            <h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5? <a href="https://kinsta.com/es/blog/html-vs-html5/#:~:text=Como%20ya%20se%20ha%20dicho,Java%20Web%20Start%20y%20Flash.">Ref*</a></h3>
+            <p>
+                Que permite hacer muchas cosas de forma nativa como en contenido multimedia, por ejemplo la etiqueta de &lt;video&gt;&lt;/video&gt; la cual permite reproducir video sin necesidad de herramientas como flash <br>
+                <video controls width="300">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+                </video><br>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">Video de mdn web docs</a>
+            </p>
+            <h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+            <ul>
+                <li>La etiqueta &lt;table&gt; define una tabla</li>
+                <li>Las etiquetas &lt;thead&gt;, &lt;tbody&gt; y &lt;tfoot&gt; definen la cabeza, cuerpo y pie de la tabla (Son etiquetas semánticas)</li>
+                <li>La etiqueta &lt;tr&gt; contiente todos los elementos de la fila</li>
+                <li>La etiqueta &lt;th&gt; contiene el elemento de la celda en la tabla</li>
+            </ul>
+            <style>table, td, th {border: 1px solid black;}</style>
+            <table>
+                <tfoot>
+                    <tr style="background-color: aquamarine;">
+                        <th></th>
+                        <th>Total</th>
+                        <th>200</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <th>Chilaquiles</th>
+                        <th>1</th>
+                        <th>Gratis</th>
+                    </tr>
+                    <tr>
+                        <th>Tamales</th>
+                        <th>4</th>
+                        <th>80</th>
+                    </tr>
+                    <tr>
+                        <th>Tortas</th>
+                        <th>2</th>
+                        <th>120</th>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Artículo</th>
+                        <th>Cantidad</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+            </table>
+            <h3>¿Cuáles son los principales controles de una forma HTML5?</h3>
+            <p>
+                Las etiquetas de:
+                <ul>
+                    <li><b>input</b> <input type="text"> para agregar un cuadro de tecto</li>
+                    <li><b><button>Elemento de botón </button></b></li>
+                    <li> 
+                        Pestañas de opciones
+                        <select name="opciones" id="opciones">
+                        <option value="fo">Primera</option>
+                        <option value="so">Segunda</option>
+                        <option value="to">Hot cakes</option>
+                        </select>
+                    </li>
+                    <li>Cuadros de texto de más de una línea <br><textarea name="Area" id="lol" cols="30" rows="10"></textarea></li>
+                </ul>
+            </p>
+            <h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</h3>
+            <p>
+                Uso chrome 109 en windows 10 y mi navegador tiene 476/555 puntos
+            </p>
+            <h2 id="islsp">Sobre el ciclo de vida y desarrollo de los sistemas de información:</h2>
+            <h3>¿Cuál es el ciclo de vida de los sistemas de información? <a href="https://www.gestiopolis.com/ciclo-de-vida-de-un-sistema-de-informacion/">Ref*</a></h3>
+            <p>
+                Clásicamente es un proceso en cascada que se lleva en el orden de:
+                <ul>
+                    <li>Definición de requerimientos</li>
+                    <li>Análisis y diseño</li>
+                    <li>Implementación y pruebas</li>
+                    <li>Integración y pruebas</li>
+                    <li>Operación y mantenimiento</li>
+                </ul>
+            </p>
+            <h3>¿Cuál es el ciclo de desarrollo de sistemas de información? <a href="https://ungoti.com/es/soluciones/desarrollo-de-software/sdlc/#:~:text=El%20ciclo%20de%20vida%20del,definici%C3%B3n%20de%20los%20requisitos%20hasta">Ref*</a></h3>
+            <p>
+                <ul>
+                    <li>Planificación</li>
+                    <li>Análisis</li>
+                    <li>Diseño</li>
+                    <li>Implementación</li>
+                    <li>Pruebas</li>    
+                    <li>Despliegue</li>
+                    <li>mantenimiento</li>
+                    <li>Repetir...</li>
+                </ul>
+            </p>
+        </article>
+    </section>
+    <footer>
+        <h2>Editor de texto: <a href="https://code.visualstudio.com/">Visual Studio Code ✨</a></h2>
+    </footer>
+</body>
+</html>
