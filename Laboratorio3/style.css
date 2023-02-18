@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@700');
+
+header {
+    display: flex;
+}
+
+header h1{
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 3em;
+    display: inline-block;
+}
+
+header img {
+    width: 8em;
+    border-radius: 50%;
+    display: inline-block;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+body {
+    color: #555;
+    font-family: sans-serif; 
+    margin: 0 auto;
+    max-width: 50em;
+    line-height: 1.5;
+    padding: 4em 1em;
+    text-align: justify; 
+    text-justify: inter-word;
+}
+
+h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+strong {
+    color: #333;
+}
+
+a {
+    color: #8d36ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.index {
+    margin: 2em 0 0 0;
+    padding: 0;
+}
+.index li {
+    display: inline-block;
+    margin: 1em auto 0 0;
+}
+
+.index li a {
+    color: #fff;
+    background-color: #8d36ff;
+    padding: 10px;
+    
+}
+
+.index li a:hover {
+    color: #8d36ff;
+    background-color: #fff;
+    border: 2px solid #333;
+    padding: 8px;
+}
+
+.spacer {
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 -200px 0 -200px;
+}
+
+.curves {
+    background-image: url('./curves.svg');
+}
+
+.button-default {
+    border: none;
+    outline: none;
+    background-color: #8d36ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.small-button {
+    padding: 5px;
+}
+.small-button:hover {
+    background-color: #6005d6;
+}
+
+#topButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    padding: 15px;
+    font-size: 18px;
+}
+
+#topButton:hover {
+    background-color: #fff;
+    color: #8d36ff;
+    border: 2px solid #8d36ff ;
+    padding: 13px;
+}
+
+thead tr th {
+    padding: 5px;
+    background-color: #8d36ff;
+    color: #fff;
+}
+
+.thr1 {
+    background-color: rgb(231, 231, 231);
+}
+
+.sell {
+    background-color: #8d36ff;
+    color: #fff;
+}
