@@ -93,17 +93,17 @@ const documentHeight = () => {
 }
 
 const ponPinguino = () => {
-    const sound = new Audio('./squeak.mp3');
+    const sound = new Audio('./assets/squeak.mp3');
     sound.play();
     for(let i = 0; i < 10; i++){
         let posx = Math.floor(Math.random() * document.body.clientWidth-100);
         let posy = Math.floor(Math.random() * documentHeight()-100);
         let elem = document.createElement('img');
         if(Math.floor(Math.random() * 9) === 1) {
-            elem.src = './marinela.png';
+            elem.src = './assets/marinela.png';
         }
         else {
-            elem.src = './pingu.png';
+            elem.src = './assets/pingu.png';
         }
         elem.style.position = 'absolute';
         elem.style.left = `${posx}px`;
