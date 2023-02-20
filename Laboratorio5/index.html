@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script defer src="script.js"></script>
+    <title>Lab 5</title>
+</head>
+<body>
+    <nav class="navbar is-primary">
+        <div class="navbar-brand">
+            <a href="./" class="navbar-item is-size-3">Imaginary friends</a>
+            <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="nav-links">
+            <div class="navbar-end">
+                <a href="" class="navbar-item">Login</a>
+                <a href="./material.html" class="navbar-item">Material design</a>
+            </div>
+        </div>
+    </nav>
+    <div class="columns">
+      <aside class="column is-1 menu has-background-dark">
+        <ul class="menu-list">
+          <li>
+            <a class="friends">
+              <figure class="image is-48x48">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" class="is-rounded">
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a class="friends">
+              <figure class="image is-48x48">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaHVxtFr0EsmismCmwOrN_4fkCC0VoIUJ6ho3dxn3BEHyfM-HnK0EsDM0b202lY76fvnU&usqp=CAU" alt="" class="is-rounded">
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a class="friends">
+              <figure class="image is-48x48">
+                <img src="https://telegram.org/file/464001940/109a6/AAq7hbwRnZ4.173186.png/3488e6ef5dc612de94" alt="" class="is-rounded">
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <div class="column has-background-light">
+        <section class="section">
+          <div class="containter">
+            <article class="message is-link">
+              <div class="message-header">
+                <p>Amigo 1</p>
+              </div>
+              <div class="message-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam incidunt error. Voluptatum est, sequi nesciunt amet quaerat placeat iste ullam ea quae quos nobis ducimus, blanditiis, accusamus illum aliquid!
+              </div>
+            </article>
+            <article class="message is-link">
+              <div class="message-header">
+                <p>Amigo 1</p>
+              </div>
+              <div class="message-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam incidunt error. Voluptatum est, sequi nesciunt amet quaerat placeat iste ullam ea quae quos nobis ducimus, blanditiis, accusamus illum aliquid!
+              </div>
+            </article>
+            <article class="message is-link">
+              <div class="message-header">
+                <p>Amigo 2</p>
+              </div>
+              <div class="message-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam incidunt error. Voluptatum est, sequi nesciunt amet quaerat placeat iste ullam ea quae quos nobis ducimus, blanditiis, accusamus illum aliquid!
+              </div>
+            </article>
+          </div>
+        </section>
+        <div class="columns">
+          <input type="text" class="input is-primary column m-2" placeholder="mensaje">
+          <button class="button is-primary column is-1 m-2" onclick="notice()">Send</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal">
+      <div class="modal-background" onclick="notice()"></div>
+      <div class="modal-content">
+        <article class="message is-danger">
+          <div class="message-header">
+            <p>Bulma es interesante, pero...</p>
+          </div>
+          <div class="message-body">
+            Perdón profe, quería hacer un clon de Discord/Slack pero creo que este framework de estilo no es apropiado,
+            o por lo menos tengo que estudiarme más los documentos. 😢
+          </div>
+        </article>
+      </div>
+      <button class="modal-close is-large" aria-label="close" onclick="notice()"></button>
+    </div>
+</body>
+</html>
