@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.min.css">
+    <script defer src="accessScript.js"></script>
+    <title>Home</title> 
+</head>
+<body>
+    <div id="content">
+        <p>Thank you for signing up</p>
+        <hr>
+        <h2>Preguntas de JavaScript</h2>
+        <h3>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
+        <p>
+            Para darle una buena experiencia a los usuarios e informarlos de las restricciones que tienen los datos que 
+            pueden entrar en nuestro servidor. Aun que vayamos a revisar los datos dentro del servidor es importante
+            que los usuarios con intrerés legítimo puedan interactuar con la interfaz.
+        </p>
+        <h3>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h3>
+        <p>
+            Cualquier navegador puede bloquear JavaScript, pero usualmente puede hacer que las páginas dejen de funcionar
+            en especial si fueron creadas con un framework que genere el contenido dinámicamente.
+        </p>
+        <h3>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h3>
+        <p>
+            Realmente, se pueden realizar las peticiones de http desde software externo al navegador, sin embargo los 
+            es importante que en el servidor haya validaciones para evitar que se abuse de este.
+            <br>
+            Como ya lo mencionamos, tenemos que verificar que el usuario que no intente atacarnos pueda interactuar correctamente            
+        </p>
+    </div>
+</body>
+</html>
