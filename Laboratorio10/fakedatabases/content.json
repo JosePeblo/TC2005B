@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Pantalones",
+        "image": "https://m.media-amazon.com/images/I/91813DxgFwL._AC_SL1500_.jpg",
+        "price": "899"
+    },
+    {
+        "name": "Camisa",
+        "image": "https://www.lazzarmexico.com/uploads/productos/11/int_camisa_mez1.jpg",
+        "price": "699"
+    },
+    {
+        "name": "Zapatos",
+        "image": "http://cdn.shopify.com/s/files/1/0061/8826/9657/products/100559.jpg",
+        "price": "1099"
+    },
+    {
+        "name": "Cinturon",
+        "image": "https://montblancmx.vteximg.com.br/arquivos/ids/157698-600-600/116706_ret01.png",
+        "price": "699"
+    },
+    {
+        "name": "Sombrero",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_660067-MLM51360207360_082022-W.jpg",
+        "price": "399"
+    },
+    {
+        "name": "Cartera",
+        "image": "https://m.media-amazon.com/images/I/61YQa82MqXL._AC_SY355_.jpg",
+        "price": "399"
+    },
+    {
+        "name": "Ropa de paca 100pz",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_866367-MLM49887828676_052022-O.jpg",
+        "price": "2000"
+    }
+]
