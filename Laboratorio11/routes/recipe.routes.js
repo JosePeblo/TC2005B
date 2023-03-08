@@ -4,12 +4,12 @@ const { sendHtml } = require('../utils');
 const router = Router();
 
 router.get('/recetas', (req, res) => {
-    sendAll('./data/recipe_desc.json', res);
+    sendAll('./data/recipe_full.json', res);
     
 });
 
-router.get('/receta/:id', (req, res, next) => {
-    searchOne('./data/recipe_desc.json', req.params.id, (err, stat) => {
+router.get('/recetas/:id', (req, res, next) => {
+    searchOne('./data/recipe_full.json', req.params.id, (err, stat) => {
         if(err) 
             res.status(500).send();
         else if(!stat) 
@@ -23,17 +23,25 @@ router.get('/crearReceta', (req, res, next) => {
 });
 
 router.post('/crearReceta', (req, res, next) => {
+
     if(req.files) {
         const { image } = req.files;
-        if(!image) 
-            return res.sendStatus(400);
-        image.mv(__dirname + '/../public/images/' + image.name);
-        req.body.src = './images/' + image.name;
-        createRecipe(req.body, image, ()=>{});
-        res.redirect('./crearReceta');
+        if(!image) {
+            res.sendStatus(400);
+            return;
+        }
+        image.mv(__dirname + '/../public/uploads/' + image.name);
+        req.body.src = './uploads/' + image.name;
+        createRecipe('./data/recipe_full.json', req.body, (err)=>{
+            if(err) {
+                res.sendStatus(500);
+            }
+            res.redirect('./crearReceta?err=false');
+        });
     } else {
         res.redirect('./crearReceta?err=true');
     }
+    
 });
 
 module.exports = router;

@@ -40,18 +40,17 @@ module.exports.searchOne = (filePath, index, callback) => {
     });
 }
 
-module.exports.createRecipe = (form, image, callback) => {
-    readFile('./data/recipe_full.json', (err, data) => {
+module.exports.createRecipe = (filePath ,form, callback) => {
+    readFile(filePath, 'utf-8', (err, data) => {
         if(err) {
             console.log(err);
             callback(err);
             return;
         } else {
-            const {formObject} = form;
-            const dataArray = JSON.parse(data);
-            console.log(data);
-            dataArray.push(formObject);
-            writeFile('./data/recipe_full.json', JSON.stringify(dataArray), (err) => {
+            const recipes = JSON.parse(data);
+            form.href = './receta/' + (recipes.length+1);
+            recipes.push(form);
+            writeFile(filePath, JSON.stringify(recipes), (err) => {
                 if(err) {
                     callback(err);
                     return;
