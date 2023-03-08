@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script defer src="./scripts/home.js"></script>
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a href="" class="navbar-item">
+                <img src="./images/instant-noodles.png" alt="recetas peblo">
+            </a>
+            <h1 class="is-size-3 my-2">RecetasPeblo.com</h1>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="toggleMenu()">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="nav-menu" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="/crearReceta" class="navbar-item">Creador de recetas</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <main class="containter m-6">
+        <div id="recipe-feed" class="columns is-multiline"></div>
+    </main>
+    
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <a href="https://www.flaticon.com/free-icons/instant-noodles" title="instant noodles icons">Instant noodles icons created by Freepik - Flaticon</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

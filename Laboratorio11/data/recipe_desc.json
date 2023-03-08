@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Yakitori con arroz",
+        "author": "Peblo",
+        "desc": "Brochetas de pollo con una deliciosa salsa agridulce",
+        "src": "./images/yakitori.jpeg",
+        "href": "./receta/1",
+        "ingredients": [],
+        "amounts": [],
+        "recipe": ""
+    },
+    {
+        "name": "Yakiudon",
+        "author": "Peblo",
+        "desc": "Fideos de udon salteados con carne y verduras",
+        "src": "./images/yakiudon.jpeg",
+        "href": "./receta/2",
+        "ingredients": [],
+        "amounts": [],
+        "recipe": ""
+    },
+    {
+        "name": "Huevos benedictinos",
+        "author": "Peblo",
+        "desc": "No te dejes intimidar por este clásico del desayuno",
+        "src": "./images/huevosBenedictinos.jpeg",
+        "href": "./receta/3",
+        "ingredients": [],
+        "amounts": [],
+        "recipe": ""
+    },
+    {
+        "name": "Lasaña",
+        "author": "Peblo",
+        "desc": "Deliciosa, fácil de hacer y excelente para tener que comer durante la semana",
+        "src": "./images/lasagna.jpeg",
+        "href": "./receta/4",
+        "ingredients": [],
+        "amounts": [],
+        "recipe": ""
+    },
+    {
+        "name": "Paella sin romper la cartera",
+        "author": "Peblo",
+        "desc": "¡Tranquilos! es más facil de lo que suena",
+        "src": "./images/paella.jpeg",
+        "href": "./receta/5",
+        "ingredients": [],
+        "amounts": [],
+        "recipe": ""
+    }
+]
