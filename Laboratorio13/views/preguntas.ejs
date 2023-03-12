@@ -8,24 +8,21 @@
             <li class="is-active"><a href="">Preguntas</a></li>
         </ul>
     </nav>
-    <h3>¿Qué otros templating engines existen para node?</h3>
+    <h3>¿Qué beneficios encuentras en el estilo MVC?</h3>
     <p>
-        Además de EJS existe:
-        <ul>
-            <li>
-                <strong>Pug: </strong>El cual retira el abrir y cerrar de las 
-                etiquetas de html resultando en código más fácil de leer y con 
-                el beneficio de poder renderizar contenido programáticamente.
-            </li>
-            <li>
-                <strong>HandleBars: </strong>El cual permite escribir código
-                dentro de las etiquetas de script el cual genere html. 
-                Este motor de templates ejecuta el renderizado del lado del 
-                cliente, a diferencia de pug o EJS que se renderizan en el 
-                servidor.
-            </li>
-        </ul>
-        
+        El poder tener una separación clara de lo que se va a hacer en cada ruta, 
+        los datos que se tienen que recuperar de la base de datos y cómo estas 
+        páginas se van a renderizar para el cliente. <br>
+        Esto nos permite tener código organizado el cual podamos entender y 
+        mantener de manera facil.
+    </p>
+    <h3>¿Encuentras alguna desventaja en el estilo arquitectónico MVC?</h3>
+    <p>
+        Que en algunos casos, como el de una página que se renderice con la 
+        misma información para todos los usuarios causa redundancia en las 
+        acciones que hace el servidor. En mi opinión, esto podría optimizarse 
+        renderizando este contenido público previamente y solo servir el html 
+        para cualquier respuesta.
     </p>
 </section>
 
