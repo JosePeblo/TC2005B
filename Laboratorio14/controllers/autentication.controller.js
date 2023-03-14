@@ -2,7 +2,11 @@ const User = require('../models/user');
 const { hashPassword, validatePassword } = require('../utils/password');
 
 exports.loginPage = (req, res) => {
-    res.render('login');
+    if (req.session.user) {
+        res.redirect('/');
+    } else {
+        res.render('login');
+    }
 }
 
 exports.login = (req, res) => {
@@ -10,7 +14,6 @@ exports.login = (req, res) => {
     new User().fetchOne(query.user, (password) => {
         if(password === hashPassword(query.password)) {
             req.session.user = query.user;
-            console.log('Logged in');
             res.redirect('/');
         } else {
             res.redirect('./login?attempt=fail')
@@ -19,7 +22,11 @@ exports.login = (req, res) => {
 }
 
 exports.signupPage = (req, res) => {
-    res.render('signup');
+    if (req.session.user) {
+        res.redirect('/');
+    } else {
+        res.render('signup');
+    }
 }
 
 exports.signup = (req, res) => {
@@ -31,9 +38,9 @@ exports.signup = (req, res) => {
         if(password){
             res.redirect('./signup?attempt=badUser');
         } else if(query.user && query.password === query.confirmPass && validatePassword(query.password)) {
-            user.setUser(query.user, query.password)
+            user.setUser(query.user, query.password);
             user.save(() => {
-                console.log('Se ha creado un nuevo usuario');
+                req.session.user = query.user;
                 res.redirect('/');
             });
         } else {

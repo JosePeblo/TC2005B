@@ -15,8 +15,18 @@
         <div class="navbar-end">
             <a href="/recetas/crear" class="navbar-item">Creador de recetas</a>
             <a href="/preguntas" class="navbar-item">Preguntas lab13</a>
-            <a href="/login" class="navbar-item">Acceder</a>
-            <a href="/signup" class="navbar-item">Registrarse</a>
+            <% try { %>
+                <% if(session) { %>
+                <a href="/profile" class="navbar-item"><%= session %></a>
+                <a href="/logout" class="navbar-item">Cerrar sesion</a>
+                <% } else { %>
+                    <a href="/login" class="navbar-item">Acceder</a>
+                    <a href="/signup" class="navbar-item">Registrarse</a>
+                <% } %>
+            <% } catch { %>
+                <a href="/login" class="navbar-item">Acceder</a>
+                <a href="/signup" class="navbar-item">Registrarse</a>
+            <% } %>
         </div>
     </div>
 </nav>

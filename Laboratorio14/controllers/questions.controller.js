@@ -1,3 +1,3 @@
 exports.getQuestions = (req, res) => {
-    res.render('preguntas');
+    res.render('preguntas', {session: req.session.user});
 }

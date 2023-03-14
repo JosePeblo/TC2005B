@@ -27,7 +27,11 @@ exports.getAllRecipes = (req, res) => {
 }
 
 exports.getSubmitionForm = (req, res, next) => {
-    res.render('submit');
+    if (req.session.user) {
+        res.render('submit');
+    } else {
+        res.redirect('/login');
+    }
 }
 
 exports.createRecipe = (req, res, next) => {
@@ -40,7 +44,7 @@ exports.createRecipe = (req, res, next) => {
         res.sendStatus(400);
         return;
     }
-    const name = image.name.replace(/ /g, '_');
+    const name = image.name.replace(/ /g, '_').replace(/\(|\)/g, '');
     image.mv(__dirname + '/../public/uploads/' + name);
     req.body.src = '/uploads/' + name;
 
