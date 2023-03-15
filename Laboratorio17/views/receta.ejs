@@ -1,0 +1,42 @@
+<%- include('includes/head.ejs') %>
+
+<section class="hero is-primary is-large" style="background-image: url(<%=content.src%>); background-size: cover;">
+    <div class="hero-body"></div>
+</section>
+<section class="section content">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/">Recetas Foráneas</a></li>
+            <li class="is-active"><a href=""><%= content.name %></a></li>
+        </ul>
+    </nav>
+    <h1>
+        <%= content.name %>
+    </h1>
+    <h2 class="subtitle">
+        Ingredientes
+    </h2>
+    
+    <table>
+        <thead><tr><th></th><th></th></tr></thead>
+        <tbody>
+
+            <% content.ingredients.forEach(elem => { %>
+                <tr>
+                    <td><%= elem[0] %></td>
+                    <td><%= elem[1] %></td>
+                </tr>
+            <% }); %>
+
+        </tbody>
+    </table>
+    <h2>
+        Preparación
+    </h2>
+    <p>
+        <%- content.recipe %>
+    </p>
+
+</section>
+
+<%- include('includes/foot.ejs') %>

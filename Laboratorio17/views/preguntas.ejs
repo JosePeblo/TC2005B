@@ -1,0 +1,29 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/mainNav.ejs') %>
+
+<section class="section content" style="height: 100vh;">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/">Recetas Foráneas</a></li>
+            <li class="is-active"><a href="">Preguntas</a></li>
+        </ul>
+    </nav>
+    <h3>¿Qué beneficios encuentras en el estilo MVC?</h3>
+    <p>
+        El poder tener una separación clara de lo que se va a hacer en cada ruta, 
+        los datos que se tienen que recuperar de la base de datos y cómo estas 
+        páginas se van a renderizar para el cliente. <br>
+        Esto nos permite tener código organizado el cual podamos entender y 
+        mantener de manera facil.
+    </p>
+    <h3>¿Encuentras alguna desventaja en el estilo arquitectónico MVC?</h3>
+    <p>
+        Que en algunos casos, como el de una página que se renderice con la 
+        misma información para todos los usuarios causa redundancia en las 
+        acciones que hace el servidor. En mi opinión, esto podría optimizarse 
+        renderizando este contenido público previamente y solo servir el html 
+        para cualquier respuesta.
+    </p>
+</section>
+
+<%- include('includes/foot.ejs') %>

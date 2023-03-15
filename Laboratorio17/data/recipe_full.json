@@ -1,0 +1,149 @@
+[
+    {
+        "name": "Yakitori con arroz",
+        "author": "Peblo",
+        "desc": "Brochetas de pollo con una deliciosa salsa agridulce",
+        "src": "/images/yakitori.jpeg",
+        "href": "./recetas/1",
+        "ingredients": [
+            [
+                "Muslos de pollo",
+                ""
+            ]
+        ],
+        "amounts": [],
+        "recipe": ""
+    },
+    {
+        "name": "Yakiudon",
+        "author": "Peblo",
+        "desc": "Fideos de udon salteados con carne y verduras",
+        "src": "/images/yakiudon.jpeg",
+        "href": "./recetas/2",
+        "ingredients": [],
+        "amounts": [],
+        "recipe": ""
+    },
+    {
+        "name": "Huevos benedictinos",
+        "author": "Peblo",
+        "desc": "No te dejes intimidar por este clásico del desayuno",
+        "src": "/images/huevosBenedictinos.jpeg",
+        "href": "./recetas/3",
+        "ingredients": [],
+        "amounts": [],
+        "recipe": ""
+    },
+    {
+        "name": "Lasaña",
+        "author": "Peblo",
+        "desc": "Deliciosa, fácil de hacer y excelente para tener que comer durante la semana",
+        "src": "/images/lasagna.jpeg",
+        "href": "./recetas/4",
+        "ingredients": [],
+        "amounts": [],
+        "recipe": ""
+    },
+    {
+        "name": "Paella sin romper la cartera",
+        "author": "Peblo",
+        "desc": "¡Tranquilos! es más facil de lo que suena",
+        "src": "/images/paella.jpeg",
+        "href": "./recetas/5",
+        "ingredients": [],
+        "amounts": [],
+        "recipe": ""
+    },
+    {
+        "ingredients": [
+            [
+                "Harina",
+                "156g"
+            ],
+            [
+                "Agua",
+                "89ml"
+            ],
+            [
+                "Sal",
+                "5g"
+            ],
+            [
+                "Levadura",
+                "0.3g"
+            ],
+            [
+                "Pasta de tomate",
+                "1 lata"
+            ],
+            [
+                "Albahaca",
+                "5 - 6 hojas"
+            ],
+            [
+                "Queso mozzarella",
+                "200g"
+            ]
+        ],
+        "author": "Alex",
+        "name": "Pizza!!!",
+        "desc": "Una receta de pizza muy fácil de hacer. Agrégale los toppings que quieras.",
+        "recipe": "",
+        "src": "/uploads/pizza.jpg",
+        "href": "./recetas/6"
+    },
+    {
+        "ingredients": [
+            [
+                "Garbanzos secos",
+                "100g"
+            ],
+            [
+                "Cebolla",
+                "1/4"
+            ],
+            [
+                "Jalapeño",
+                "1/2"
+            ],
+            [
+                "Ajo",
+                "1 diente"
+            ],
+            [
+                "Cilantro",
+                "1/2 taza"
+            ],
+            [
+                "Perejil",
+                "1/2 taza"
+            ],
+            [
+                "Harina",
+                "2 cucharadas"
+            ],
+            [
+                "Sal",
+                "1 cucharada"
+            ],
+            [
+                "Polvo para hornear",
+                "1 cucharadita"
+            ],
+            [
+                "Comino en polvo",
+                "1/2 cucharadita"
+            ],
+            [
+                "Aceite vegetal",
+                "(para freir)"
+            ]
+        ],
+        "author": "bon appétit",
+        "name": "Falafel",
+        "desc": "Es vegano!!!",
+        "recipe": "Una noche antes, deja remojar los garbanzos.\r\n\r\nAl día siguiente, licúalos ligeramente sin que se vuelvan completamente puré, deben tener una consistencia de arena gruesa; reserva en un tazón.\r\n\r\nLicúa la cebolla, el jalapeño, el diente de ajo, el cilantro y el perejil completamente y luego incorpora con los garbanzos, la sal, el comino, la harina y el polvo para hornear.\r\n\r\nMezclalo todo junto y forma esferas del tamaño de una pelota de ping-pong.\r\n\r\nPuedes freír profundamente falafel (dependiendo de que tanto quieras limpiar), también puedes aplanar las esferas y utilizar menos aceite o usar una freidora de aire rociándolas con aceite en spray.",
+        "src": "/uploads/WEPX4216.JPG",
+        "href": "./recetas/7"
+    }
+]
