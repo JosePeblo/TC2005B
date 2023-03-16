@@ -4,8 +4,8 @@ const router = Router();
 
 router.get('/recetas/:id', recipeController.getRecipe);
 
-router.get('/recetas/crear', recipeController.getSubmitionForm);
+router.get('/crear', recipeController.getSubmitionForm);
 
-router.post('/recetas/crear', recipeController.createRecipe);
+router.post('/crear', recipeController.createRecipe);
 
 module.exports = router;

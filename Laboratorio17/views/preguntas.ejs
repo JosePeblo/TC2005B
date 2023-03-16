@@ -8,21 +8,31 @@
             <li class="is-active"><a href="">Preguntas</a></li>
         </ul>
     </nav>
-    <h3>¿Qué beneficios encuentras en el estilo MVC?</h3>
+    
+
+    <h3>¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h3>
     <p>
-        El poder tener una separación clara de lo que se va a hacer en cada ruta, 
-        los datos que se tienen que recuperar de la base de datos y cómo estas 
-        páginas se van a renderizar para el cliente. <br>
-        Esto nos permite tener código organizado el cual podamos entender y 
-        mantener de manera facil.
+        Que de esta manera solo nos tenemos que preocupar por modificar el modelo 
+        cuando el controlador funciona correctamente pero los datos que obtiene no 
+        son correctos. <br>
+        Al separar este podemos mantener nuestro código más facilemnte haciendo 
+        pruebas para determinar si el problema es de ruteo, de las vistas, 
+        del controlador o de los datos que nos regresa la base de datos.
     </p>
-    <h3>¿Encuentras alguna desventaja en el estilo arquitectónico MVC?</h3>
+    <h3>¿Qué es SQL injection y cómo se puede prevenir?</h3>
     <p>
-        Que en algunos casos, como el de una página que se renderice con la 
-        misma información para todos los usuarios causa redundancia en las 
-        acciones que hace el servidor. En mi opinión, esto podría optimizarse 
-        renderizando este contenido público previamente y solo servir el html 
-        para cualquier respuesta.
+        Es el aprovecharse de que la forma de comunicarse con el servidor de 
+        base de datos es por medio de comandos escritos en texto plano; esto, 
+        si no se tiene una capa de protección, puede resultar en que se escape 
+        el comando y se realicen acciones que un atacante pueda plantar en nuestra
+        base de datos. Por otra parte también se puede dar acceso a registros 
+        que no sean permitidos para ese usuario, entre otras cosas más. <br>
+        Una forma de prevenir la inyeccion de SQL es usando queries parametrizadas 
+        básicamente creando una query con '?' en donde vayan los parámetros 
+        dados por el usuario y posteriormente agregarlos en una lista. En nodejs 
+        podemos hacer esto dentro de la misma función para realizar la query, 
+        esto nos permite incluir todos los datos como texto que no escape la 
+        query y realice queries adicionales.
     </p>
 </section>
 

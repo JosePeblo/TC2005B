@@ -11,7 +11,7 @@
     </nav>
 
     <h1 class="title">Creador de recetas</h1>
-    <form id="form" action="/recetas/crear" method="post" enctype="multipart/form-data" autocomplete="off">
+    <form id="form" action="/crear" method="post" enctype="multipart/form-data" autocomplete="off">
         <!-- First ingredient -->
         <div class="field is-horizontal">
             <div class="field-label is-normal">
@@ -59,19 +59,6 @@
             </div>
 
         </div>
-        <!-- Author -->
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">Autor</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <div class="control is-small">
-                        <input type="text" class="input" placeholder="Alguien..." name="author">
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <!-- Recipe name -->
         <div class="field is-horizontal">
@@ -95,7 +82,7 @@
             <div class="field-body">
                 <div class="field">
                     <div class="control is-small">
-                        <input type="text" class="input" placeholder="Pasta my rica" name="desc">
+                        <input type="text" class="input" placeholder="Pasta my rica" name="description">
                     </div>
                 </div>
             </div>

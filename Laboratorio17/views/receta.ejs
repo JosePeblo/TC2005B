@@ -20,13 +20,13 @@
     <table>
         <thead><tr><th></th><th></th></tr></thead>
         <tbody>
-
+            <% if(content.ingredients) { %>
             <% content.ingredients.forEach(elem => { %>
                 <tr>
                     <td><%= elem[0] %></td>
                     <td><%= elem[1] %></td>
                 </tr>
-            <% }); %>
+            <% }); }%>
 
         </tbody>
     </table>

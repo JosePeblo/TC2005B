@@ -1,54 +1,30 @@
-const { readFile, writeFile } = require('fs');
-const recipeFile = './data/recipe_full.json';
+require('dotenv').config();
+const db = require('../utils/database');
 
 module.exports = class Recipe {
-    constructor(obj) {
-        if(obj) {
-            this.setRecipe(obj);
-        }
+    constructor(name, description, src, recipe, ingredients) {
+        this.name = name || null;
+        this.description = description || null;
+        this.src = src || null;
+        this.recipe = recipe || null;
+        this.ingredients = ingredients || null;
     }
 
-    save (callback) {
-        if(Object.keys(this).length === 0) {
-            throw 'no entity can be saved';
-        } else {
-            this.fetchAll((err, data) => {
-                if(err) {
-                    throw 'error while fetching recipes';
-                }
-                let recipes = JSON.parse(data);
-                this.href = './recetas/' + (recipes.length + 1);
-                this.ingredients = JSON.parse(this.ingredients);
-                recipes.push(this);
-                writeFile(recipeFile, JSON.stringify(recipes), callback);
-            });
-        }
-        
+    save (id_user) {
+        return db.execute(`INSERT INTO recipe (id_user, name, description, src, recipe, ingredients) 
+        VALUES(?,?,?,?,?,?)`,[id_user, this.name, this.description, this.src, this.recipe, this.ingredients]);
     }
 
-    fetchAll(callback) {
-        readFile(recipeFile, 'utf-8', callback);   
+    static fetchAll() {
+        return db.execute(`SELECT R.id_recipe, R.id_user, R.name, R.description, R.src, U.username
+                           FROM recipe R, user U
+                           WHERE R.id_user = U.id_user
+                           ORDER BY id_recipe`);
     }
 
-    fetchOne(index, callback) {
-        this.fetchAll((err, data) => {
-            if(err) {
-                throw 'error while fetching recipes';
-            }
-            let recipes = JSON.parse(data);
-            callback(recipes[index]);
-        });
-
+    static fetchOne(index) {
+        return db.execute('SELECT name, description, src, recipe, ingredients FROM recipe WHERE id_recipe = ?', [index]);
     }
 
-    setRecipe(obj) {
-        this.name = obj.name;
-        this.author = obj.author;
-        this.desc = obj.desc;
-        this.src = obj.src;
-        this.href = obj.href;
-        this.ingredients = obj.ingredients;
-        this.amounts = obj.amounts;
-        this.recipe = obj.recipe;
-    }
 }
+

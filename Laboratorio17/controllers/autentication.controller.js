@@ -11,14 +11,23 @@ exports.loginPage = (req, res) => {
 
 exports.login = (req, res) => {
     const query = req.body;
-    new User().fetchOne(query.user, (password) => {
-        if(password === hashPassword(query.password)) {
-            req.session.user = query.user;
-            res.redirect('/');
+    User.fetchOne(query.user).then(([rows, fiedData]) => {
+        if(rows.length === 0) {
+            
+            res.redirect('./login?attempt=fail');
+
+        } else if(rows[0].password !== hashPassword(query.password)) {
+
+            res.redirect('./login?attempt=fail');
+
         } else {
-            res.redirect('./login?attempt=fail')
+            
+            req.session.userid = rows[0].id_user;
+            req.session.user = rows[0].username;
+            res.redirect('/');
+
         }
-    });
+    }).catch(()=>{ console.log('Database Error'); });
 }
 
 exports.signupPage = (req, res) => {
@@ -31,21 +40,23 @@ exports.signupPage = (req, res) => {
 
 exports.signup = (req, res) => {
     const query = req.body;
-    const user = new User();
+    if(query.user && (query.password === query.confirmPass) && validatePassword(query.password)) {
 
-    user.fetchOne(query.user, (password) => {
-        
-        if(password){
-            res.redirect('./signup?attempt=badUser');
-        } else if(query.user && query.password === query.confirmPass && validatePassword(query.password)) {
-            user.setUser(query.user, query.password);
-            user.save(() => {
-                req.session.user = query.user;
-                res.redirect('/');
-            });
-        } else {
-            res.redirect('./signup?attempt=badRequest');
-        }
-        
-    });
+        User.fetchOne(query.user).then(([rows, fiedData]) => {
+            if(rows.length !== 0) {
+                res.redirect('./signup?attempt=badUser');
+            } else {
+                const user = new User(query.user, hashPassword(query.password));
+                user.save().then(result => {
+                    req.session.userid = result.insertId;
+                    req.session.user = query.user;
+                    res.redirect('/');  
+                })
+
+            }
+        }).catch(()=>{ console.log('Database Error'); });
+
+    } else {
+        res.redirect('./signup?attempt=badRequest');
+    }
 }

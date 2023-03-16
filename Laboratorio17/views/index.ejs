@@ -8,7 +8,7 @@
 <% content.forEach(elem => { %>
 
     <div class="column is-3">
-        <a href="<%= elem.href %>">
+        <a href="<%= './recetas/' + elem.id_recipe %>">
         <article class="card">
             <div class="card-image">
                     <figure class="image is-4by3">
@@ -18,11 +18,11 @@
                         <div class="media">
                             <div class="media-content">
                                 <p class="title is-4"><%= elem.name %></p>
-                                <p class="subtitle is-6">Por: <%= elem.author %></p>
+                                <p class="subtitle is-6">Por: <%= elem.username %></p>
                             </div>
                         </div>
                         <div class="content">
-                            <%= elem.desc %>
+                            <%= elem.description %>
                         </div>
                     </div>
                 </div>
