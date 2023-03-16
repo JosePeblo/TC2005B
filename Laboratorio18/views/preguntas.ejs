@@ -1,0 +1,27 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/mainNav.ejs') %>
+
+<section class="section content" style="height: 100vh;">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/">Recetas Foráneas</a></li>
+            <li class="is-active"><a href="">Preguntas</a></li>
+        </ul>
+    </nav>
+    
+
+    <h3>¿Qué otras formas de autentificación existen?</h3>
+    <p>
+        Existe la opción de usar sesiones para autenticar a nuestros usuarios 
+        y reconocerlos a través del protocolo http/https, el cual no maneja estado 
+        en la comunicación. Las sesiones que creamos las guardamos en la base de datos, 
+        enviamos una cookie al usuario con su sesión y este la enviará de regreso 
+        con cada petición que haga al servidor. <br>
+        Otra opción de autenticación que existe es el uso de tokens los cuales 
+        se parecen mucho a las sesiones, sin embargo estas no mantienen información 
+        del usuario, solo son una clave para que podamos autenticarlo sin consultar
+        a la base de datos.
+    </p>
+</section>
+
+<%- include('includes/foot.ejs') %>

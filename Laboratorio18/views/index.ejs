@@ -1,0 +1,40 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/mainNav.ejs') %>
+
+<main class="containter m-6">
+    <div id="recipe-feed" class="columns is-multiline">
+
+<% if(content) { %>
+<% content.forEach(elem => { %>
+
+    <div class="column is-3">
+        <a href="<%= './recetas/' + elem.id_recipe %>">
+        <article class="card">
+            <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="<%= elem.src %>" alt="Receta" style="object-fit:cover;">
+                    </figure>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4"><%= elem.name %></p>
+                                <p class="subtitle is-6">Por: <%= elem.username %></p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <%= elem.description %>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </a>
+    </div>
+
+<% });} else { %>
+    'Parece que no hay recetas 😥'
+<%  } %>
+
+    </div>
+</main>
+
+<%- include('includes/foot.ejs') %>
