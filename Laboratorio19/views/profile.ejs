@@ -1,0 +1,56 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/mainNav.ejs') %>
+
+<section class="section container">
+    <h1 class="title">Hola <%= session %></h1><br>
+    <h2 class="subtitle">Tus recetas</h2>
+
+    <div id="recipe-feed" class="columns is-multiline">
+
+        <% if(content && content.length > 0) { %>
+        <% content.forEach(elem => { %>
+        
+            <div class="column is-3">
+                <article class="card">
+                    <a href="<%= './recetas/' + elem.id_recipe %>">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="<%= elem.src %>" alt="Receta" style="object-fit:cover;">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4"><%= elem.name %></p>
+                                    <p class="subtitle is-6">Por: <%= elem.username %></p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p class="subtitle is-6"><%= elem.description %></p>
+                            </div>
+                        </div>
+                    </a>
+
+
+                        <div class="card-footer">
+                            <p class="card-footer-item">Borrar</p>
+                            <div class="card-footer-item">
+                            <form action="./profile" method="post">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+                                    <input type="submit" value="<%= elem.id_recipe %>" name="delete" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;">
+                            </form>
+                            </div>
+                        </div>
+                    </article>
+            </div>
+        
+        <% });} else { %>
+            'Parece que no hay recetas 😥'
+        <%  } %>
+        
+    </div>
+</section>
+
+
+
+<%- include('includes/foot.ejs') %>  

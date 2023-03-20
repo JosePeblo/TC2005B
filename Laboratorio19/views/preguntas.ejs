@@ -1,0 +1,46 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/mainNav.ejs') %>
+
+<section class="section content" style="height: 100vh;">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/">Recetas Foráneas</a></li>
+            <li class="is-active"><a href="">Preguntas</a></li>
+        </ul>
+    </nav>
+
+    <h3>¿En qué consiste el control de acceso basado en roles?</h3>
+    <p>
+        En manejar las acciones que pueden o no realizar los usuarios con 
+        nuestro sistema. Básicamente se trata de hacer modular la asignación de
+        roles y privilegios para nustros usuarios.
+    </p>
+    <h3>
+        Investiguen y describan 2 sistemas, uno que aplique RBAC y uno que no. 
+        Realicen un análisis de las ventajas y desventajas de cada uno con 
+        respecto al control de acceso.
+    </h3>
+    <p>
+        Existen dos formas de implementar el control de acceso: basado en roles 
+        y basado en atributos. El control de acceso basado en roles requiere de 
+        declarar roles, privilegios y asignarlos a los usuarios, este sistema 
+        tiene la ventaja de que es fácil de implementar, pero tiene un problema 
+        al que se le conoce como <strong>explosión de roles</strong>. Esto 
+        significa que, se agregan más roles para aumentar la granularidad de 
+        los permisos, pero al hacer esto se genera el problema de que hay 
+        cientos de reglas que manejar. <br><br>
+        La otra alternativa es el control de acceso basado en atributos, en 
+        este se da el acceso y funciones a los usuarios basándose en atributos 
+        que se le dan a un recurso. Estos pueden ser la fecha de creación, 
+        dueño, nivel de sensibilidad, ubicación, etc... <br>
+        El definir las cosas de esta manera tiene la ventaja de que que el 
+        control del acceso está bien definido y ya que los permisos se 
+        encuentran al nivel del recurso y los cientos de restricciones que se 
+        le den a este no crean tantas variaciones como con los roles. Sin 
+        embargo, es un método bastante dificil de implementar correctamente y 
+        requiere de bastante esfuerzo para poderlo poner en pie.
+
+    </p>
+</section>
+
+<%- include('includes/foot.ejs') %>

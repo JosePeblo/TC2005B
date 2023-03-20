@@ -1,0 +1,70 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/mainNav.ejs') %>
+
+<section class="hero is-info is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                    
+                    <form class="box pl-5" action="" method="post" id="login-form" autocomplete="off">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+                        <h1 class="title has-text-black">Registrarse</h1>
+                        <div class="field">
+                            <label class="label" for="user">Nombre</label>
+                            <div class="field has-addons">
+                                <div class="control">
+                                    <input type="text" id="user" placeholder="Nombre de usuario" name="user" class="input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="password">Contraseña</label>
+                            <div class="field has-addons">
+                                <div class="control">
+                                    <input type="password" id="password" name="password" placeholder="Contraseña" class="input">
+                                </div>
+                                <div class="control">
+                                    <a class="button is-link" type="button">
+                                        <span id="show-pass" class="icon">
+                                            <i id="open" class="fas fa-solid fa-eye"></i>
+                                            <i id="closed" class="fas fa-sharp fa-solid fa-eye-slash is-hidden"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="confirmPass">Confirmar contraseña</label>
+                            <div class="field has-addons">
+                                <div class="control">
+                                    <input type="password" id="confirmPass" placeholder="Confirma contraseña" name="confirmPass" class="input" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <a class="subtitle is-underlined has-text-link" href="./login">Ya tengo cuenta</a>
+                        </div>
+
+                        <div class="field">
+                            <input class="button is-link" type="submit" value="Submit" id="submit-btn" disabled>
+                        </div>
+                    </form>
+                    <div id="password-alert" class="notification is-danger is-flex is-hidden"></div>
+                    <div id="notification" class="notification is-warning is-flex is-hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script defer src="/scripts/signUpScript.js"></script>
+
+<%- include('includes/foot.ejs') %>  
+
+
+
+
