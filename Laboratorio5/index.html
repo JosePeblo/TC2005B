@@ -4,102 +4,394 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola world</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script defer src="script.js"></script>
-    <title>Lab 5</title>
 </head>
 <body>
-    <nav class="navbar is-primary">
-        <div class="navbar-brand">
-            <a href="./" class="navbar-item is-size-3">Imaginary friends</a>
-            <a class="navbar-burger" id="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-        </div>
-        <div class="navbar-menu" id="nav-links">
-            <div class="navbar-end">
-                <a href="" class="navbar-item">Login</a>
-                <a href="./material.html" class="navbar-item">Material design</a>
-            </div>
-        </div>
-    </nav>
-    <div class="columns">
-      <aside class="column is-1 menu has-background-dark">
-        <ul class="menu-list">
-          <li>
-            <a class="friends">
-              <figure class="image is-48x48">
-                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" class="is-rounded">
-              </figure>
-            </a>
-          </li>
-          <li>
-            <a class="friends">
-              <figure class="image is-48x48">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaHVxtFr0EsmismCmwOrN_4fkCC0VoIUJ6ho3dxn3BEHyfM-HnK0EsDM0b202lY76fvnU&usqp=CAU" alt="" class="is-rounded">
-              </figure>
-            </a>
-          </li>
-          <li>
-            <a class="friends">
-              <figure class="image is-48x48">
-                <img src="https://telegram.org/file/464001940/109a6/AAq7hbwRnZ4.173186.png/3488e6ef5dc612de94" alt="" class="is-rounded">
-              </figure>
-            </a>
-          </li>
-        </ul>
-      </aside>
-      <div class="column has-background-light">
-        <section class="section">
-          <div class="containter">
-            <article class="message is-link">
-              <div class="message-header">
-                <p>Amigo 1</p>
-              </div>
-              <div class="message-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam incidunt error. Voluptatum est, sequi nesciunt amet quaerat placeat iste ullam ea quae quos nobis ducimus, blanditiis, accusamus illum aliquid!
-              </div>
-            </article>
-            <article class="message is-link">
-              <div class="message-header">
-                <p>Amigo 1</p>
-              </div>
-              <div class="message-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam incidunt error. Voluptatum est, sequi nesciunt amet quaerat placeat iste ullam ea quae quos nobis ducimus, blanditiis, accusamus illum aliquid!
-              </div>
-            </article>
-            <article class="message is-link">
-              <div class="message-header">
-                <p>Amigo 2</p>
-              </div>
-              <div class="message-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsam incidunt error. Voluptatum est, sequi nesciunt amet quaerat placeat iste ullam ea quae quos nobis ducimus, blanditiis, accusamus illum aliquid!
-              </div>
-            </article>
-          </div>
-        </section>
-        <div class="columns">
-          <input type="text" class="input is-primary column m-2" placeholder="mensaje">
-          <button class="button is-primary column is-1 m-2" onclick="notice()">Send</button>
-        </div>
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+          <a href="#" class="navbar-item">
+              <img src="https://ca.slack-edge.com/T08BWSY0P-U04P9GMH7J9-bcdc8ebe265f-512" alt="yo quién más">
+          </a>
+          <h1 class="is-size-3 my-2">JOSEPABLO.SPOTBLOG</h1>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="toggleMenu()">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+          </a>
       </div>
-    </div>
-    <div class="modal" id="modal">
-      <div class="modal-background" onclick="notice()"></div>
-      <div class="modal-content">
-        <article class="message is-danger">
-          <div class="message-header">
-            <p>Bulma es interesante, pero...</p>
+      <div id="nav-menu" class="navbar-menu">
+          <div class="navbar-end">
+              <a href="#me" class="navbar-item">Sobre mi</a>
+              <a href="#contact" class="navbar-item">Datos de contacto</a>
+              <a href="#questionsL1" class="navbar-item">Preguntas Lab 1</a>
+              <a href="#islsp" class="navbar-item">Ciclo de vida de S.I.</a>
+              <a href="#questionsLab3" class="navbar-item">Preguntas Lab 3</a>
+            
+              <a href="#jsProblems" class="navbar-item">Ejercicios javascript</a>
+              <a href="#questionsLab4" class="navbar-item">Preguntas Lab 4</a>
+              <a href="#material-design" class="navbar-item">Material Design</a>
+            
+              
           </div>
-          <div class="message-body">
-            Perdón profe, quería hacer un clon de Discord/Slack pero creo que este framework de estilo no es apropiado,
-            o por lo menos tengo que estudiarme más los documentos. 😢
-          </div>
+      </div>
+  </nav>
+
+    <section class="section content">
+        <article>
+            <h2 id="me">Sobre mi</h2>
+            <p>
+                Hola, me llamo José Pablo Martínez Valdivia. Estudio ingeniería en tecnologías computacionales en el Tec 
+                de Monterrey campus Querétaro.
+                Me gustan los videojuegos, la música y cocinar. 
+            </p>
+            <h2 id="contact">Datos de contacto</h2>
+            <p>
+                <Strong>Matrícula:</Strong> A01275676
+                <strong>Correo:</strong> <a href="mailto: a01275676@tec.mx">a01275676@tec.mx</a>
+            </p>
         </article>
-      </div>
-      <button class="modal-close is-large" aria-label="close" onclick="notice()"></button>
-    </div>
+        <article>
+            <h2 id="questionsL1">Preguntas Laboratorio 1</h2>
+            <h3>¿Cuál es la diferencia entre Internet y la World Wide Web? <a target="_blank" href="https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,asienta%20sobreesa%20red%20de%20computadoras.">Ref*</a></h3>
+            <p>
+                El internet se refiere a las computadoras que están conectadas en la red global,
+                la "World Wide Web" se refiere a los sitios que existen en esta red.
+            </p>
+            <h3>¿Cuáles son las partes de un URL? <a target="_blank" href="https://edytapukocz.com/url-partes-ejemplos-facil/">Ref*</a></h3>
+
+            <ul>
+                <li>Un url se compone de un protocolo como: <strong>http://</strong>, <strong>https://</strong>, <strong>mqtt://</strong></li><br>
+                <li>Un sub-dominio como: <strong>www</strong></li><br>
+                <li>Un dominio, que es el nombre de la página o la dirección ip de esta como: <strong>google.com</strong></li><br>
+                <li>Una ruta la cual se separa por <strong>/</strong> como si se tratara de directorios como: <strong>/cursos/progra/etc</strong></li><br>
+                <li>Parametros los cuales son una serie de llaves y valores la cual se comienza con un <strong>?</strong> y después se nombra la llave, un signo de<strong> =</strong> y el valor. Se coloca un <strong>&</strong> para colocar un parámetro nuevo <strong>?nombre=Juan&apellido=Monroy</strong></li><br>
+                <li>La etiqueta que se denota por un <strong>#</strong> y después se nombra el id de un elemento al que se quiere hacer scroll instantáneamente <strong>#references</strong></li><br>
+            </ul>
+
+            <h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE? <a target="_blank" href="https://developer.mozilla.org/es/docs/Web/HTTP/Methods">Ref*</a></h3>
+            <p>
+                El protocolo http nos provee de estos métodos para la transmisión de información a través de la web
+                <ul>
+                    <li><strong>Get</strong> se utiliza para recuperar datos</li>
+                    <li><strong>Head</strong> es como Get pero omitiendo el cuerpo de la respuesta</li>
+                    <li><strong>Post</strong> se utiliza para enviar informacion al servidor</li>
+                    <li><strong>Put</strong> envia informacion y la reemplaza, a diferencia de post, usar este metodo no crea informacion adicional en una petición</li>
+                    <li><strong>Patch</strong> es como Put pero este método puede reemplazar partes parciales de la informacion que quiere cambiar</li>
+                    <li><strong>Delete</strong> se utiliza para borrar un registro específico</li>
+                </ul>
+                
+            </p>
+            <h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
+            <p>
+                El método <strong>POST</strong> ya que este es el que está diseñado para enviar información.
+            </p>
+            <h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
+            <p>
+                El método <strong>GET</strong> porque es el que se utiliza para acceder a recursos
+            </p>
+            <h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error? <a target="_blank" href="https://developer.mozilla.org/es/docs/Web/HTTP/Status">Ref*</a></h3>
+            <p>
+                El código 200 de http significa éxito en la solicitud
+            </p>
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+            <p>
+                No, ya que es probable que si se encontró con un error 404 (not found) es porque intentó entrar a un recurso que no existe y al que no se debería poder llegar desde la página 
+                o está intentando acceder a un recurso prohibido el cual por diseño responde con que no existe por cuestiones de seguridad.
+            </p>
+            <h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+            <p>
+                Sí, ya que los errores del rango de los 500 corresponden a un error de servidor el cual tiene que ver con el como se programó este.
+            </p>
+            <h3>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados. <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Ref*</a></h3>
+            <p>
+                Que ya no se debe utilizar porque hay nuevas formas de hacer las cosas, sin embargo puede que se siga funcionando por cuestiones de compatibilidad con viejos sitios y navegadores <br>
+                &lt;s&gt;&lt;/s&gt; y &lt;strile&gt;&lt;/strike&gt; han sido abandonados a fabor de tachar el texto con hojas de estilos <br>
+                <s>Ejemplo con s</s> <br>
+                <strike>Ejemplo con strike</strike> <br>
+                Lo mismo con &lt;font&gt;&lt;/font&gt; que se usaba para cambiar aspectos de la fuente de un texto
+                <font size="4" color="#6700112">Como este</font>
+                La etiqueta &lt;dir&gt;&lt;/dir&gt; fue reemplazada por &lt;ul&gt;&lt;/ul&gt; para hacer listas
+            </p>
+            <h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5? <a target="_blank" href="https://kinsta.com/es/blog/html-vs-html5/#:~:text=Como%20ya%20se%20ha%20dicho,Java%20Web%20Start%20y%20Flash.">Ref*</a></h3>
+            <p>
+                Que permite hacer muchas cosas de forma nativa como en contenido multimedia, por ejemplo la etiqueta de &lt;video&gt;&lt;/video&gt; la cual permite reproducir video sin necesidad de herramientas como flash <br>
+                <figure>
+                  <video controls width="300">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+                </video>
+                </figure>
+                <br>
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">Video de mdn web docs</a>
+            </p>
+            <h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+            <ul>
+                <li>La etiqueta &lt;table&gt; define una tabla</li>
+                <li>Las etiquetas &lt;thead&gt;, &lt;tbody&gt; y &lt;tfoot&gt; definen la cabeza, cuerpo y pie de la tabla (Son etiquetas semánticas)</li>
+                <li>La etiqueta &lt;tr&gt; contiente todos los elementos de la fila</li>
+                <li>La etiqueta &lt;th&gt; contiene el elemento de la celda en la tabla</li>
+            </ul>
+            
+            <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Artículo</th>
+                        <th>Cantidad</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chilaquiles</td>
+                        <td>1</td>
+                        <td>Gratis</td>
+                    </tr>
+                    <tr>
+                        <td>Tamales</td>
+                        <td>4</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>Tortas</td>
+                        <td>2</td>
+                        <td>120</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>Total</td>
+                        <td>200</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <h3>¿Cuáles son los principales controles de una forma HTML5?</h3>
+            <p>
+                Las etiquetas de:
+                <ul>
+                    <li><strong>input</strong> <input type="text"> para agregar un cuadro de texto</li>
+                    <li><strong><button class="button is-primary">Elemento de botón </button></strong></li>
+                    <li> 
+                        Pestañas de opciones
+                        <select name="opciones" id="opciones">
+                            <option value="fo">Primera</option>
+                            <option value="so">Segunda</option>
+                            <option value="to">Hot cakes</option>
+                        </select>
+                    </li>
+                    <li>Cuadros de texto de más de una línea <br><textarea name="Area" id="lol" cols="30" rows="10"></textarea></li>
+                </ul>
+            </p>
+            <h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</h3>
+            <p>
+                Uso chrome 109 en windows 10 y mi navegador tiene 476/555 puntos
+            </p>
+            <h2 id="islsp">Sobre el ciclo de vida y desarrollo de los sistemas de información:</h2>
+            <h3>¿Cuál es el ciclo de vida de los sistemas de información? <a target="_blank" href="https://www.gestiopolis.com/ciclo-de-vida-de-un-sistema-de-informacion/">Ref*</a></h3>
+            <p>
+                Clásicamente es un proceso en cascada que se lleva en el orden de:
+                <ul>
+                    <li>Definición de requerimientos</li>
+                    <li>Análisis y diseño</li>
+                    <li>Implementación y pruebas</li>
+                    <li>Integración y pruebas</li>
+                    <li>Operación y mantenimiento</li>
+                </ul>
+            </p>
+            <h3>¿Cuál es el ciclo de desarrollo de sistemas de información? <a target="_blank" href="https://ungoti.com/es/soluciones/desarrollo-de-software/sdlc/#:~:text=El%20ciclo%20de%20vida%20del,definici%C3%B3n%20de%20los%20requisitos%20hasta">Ref*</a></h3>
+            <p>
+                <ul>
+                    <li>Planificación</li>
+                    <li>Análisis</li>
+                    <li>Diseño</li>
+                    <li>Implementación</li>
+                    <li>Pruebas</li>    
+                    <li>Despliegue</li>
+                    <li>mantenimiento</li>
+                    <li>Repetir...</li>
+                </ul>
+            </p>
+        </article>
+        <article>
+            <h2 id="questionsLab3">Preguntas Laboratorio 3</h2>
+            <h3>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </h3>
+            <p>
+                Se tiene que usar con cuidado ya es esta le dará prioridad a los estilos que le definas a ese elemento, 
+                lo cual, en un proyecto grande puede interferir con estilos de otros elementos.
+            </p>
+            <h3>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</h3>
+            <p>
+                Para cuidar que el texto sea legible y no se confunda con alguna parte de la imagen.
+            </p>
+            <h3>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</h3>
+            <p>
+                Diferenciar entre las unidades como <strong>px</strong> que nos permiten definir tamaños y espacios 
+                utilizando la cantidad de pixeles que tenga la pantalla del usuario. Unidades como <strong>%</strong> 
+                nos permiten hacer un cálculo basándonos en los elementos padres. La mayor recomendación usar todos los
+                recursos que necesitemos para lograr un diseño responsivo que funcione en la mayoría de dispositivos.
+            </p>
+            <h3>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</h3>
+            <p>
+                Porque los espacios y saltos de línea son necesarios para que el programador pueda entender el código, 
+                sin embargo estos también consumen bytes y por ende también tienen que ser enviados al momento de que se 
+                entra a la página. 
+            </p>
+            <p>
+                Minimisar nuestras hojas de estilos nos permite reducir la cantidad de informacion que se tiene que enviar 
+                y de esta forma hace más rápido el cargado de nuestra página.
+            </p>
+        </article>
+        <article>
+            <h2 id="jsProblems">Ejercicios javascript</h2>
+            <h3>Problema 1</h3>
+            <p>
+                <strong>Entrada:</strong> un número pedido con un prompt. <br>
+                <strong>Salida:</strong> Una tabla con los números del 1 al número dado con sus cuadrados y cubos. 
+            </p>
+            <button class="button is-primary" onclick="problem1()">Comenzar</button>
+            <div id="problem1"></div>
+
+            <h3>Problema 2</h3>
+            <p>
+                <strong>Entrada:</strong> Usando un prompt se pide el resultado de la suma de 2 números generados de manera aleatoria. <br>
+                <strong>Salida:</strong> La página debe indicar si el resultado fue correcto o incorrecto, y el tiempo que tardó el usuario en escribir la respuesta.
+            </p>
+            <button class="button is-primary" onclick="problem2()">Comenzar</button>
+            <div id="problem2"></div>
+
+            <h3>Problema 3</h3>
+            <p>
+                <strong>Función:</strong> contador. <br>
+                <strong>Parámetros:</strong> Un arreglo de números. <br>
+                <strong>Regresa:</strong> La cantidad de números negativos en el arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo.
+            </p>
+            <button class="button is-primary" onclick="TestProblem3()">Probar</button>
+            <div id="problem3"></div>
+
+            <h3>Problema 4</h3>
+            <p>
+                <strong>Función:</strong> promedios. <br>
+                <strong>Parámetros:</strong> Un arreglo de arreglos de números. <br>
+                <strong>Regresa:</strong> Un arreglo con los promedios de cada uno de los renglones de la matriz.
+            </p>
+            <button class="button is-primary" onclick="TestProblem4()">Probar</button>
+            <div id="problem4"></div>
+
+            <h3>Problema 5</h3>
+            <p>
+                <strong>Función:</strong> inverso. <br>
+                <strong>Parámetros:</strong> Un número. <br>
+                <strong>Regresa:</strong> El número con sus dígitos en orden inverso.
+            </p>
+            <button class="button is-primary" onclick="TestProblem5()">Probar</button>
+            <div id="problem5"></div>
+
+            <h3>Problema 6</h3>
+            <p>
+                Está página se ve un poco aburrida... <br> ¿Sabes qué le falta? 
+                exacto!!! <strong>Pingüinos</strong> vamos a crear un botón que 
+                llene toda nuestra página con pingüinos!!! <br> 
+                Qué importa si no podemos leer el texto <strong>VA A HABER PINGÜINOS</strong>
+            </p>
+            <button class="button is-primary" onclick="ponPinguino()">PINGÜINOS</button>
+            
+            <h2 id="questionsLab4">Preguntas Laboratorio 4</h2>
+            <h3>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h3>
+            <p>
+                <ul>
+                    <li>
+                        Java es compilado para su interpretación por un la máquina virtual de Java, esto lo hace multiplataforma, 
+                        mientras que JavaScript pasa diréctamente como texto al intérprete, la Implementación de este depede 
+                        del navegador.
+                    </li>
+                    <li>
+                        Los dos tienen una sintaxis inspirada en c
+                    </li>
+                    <li>
+                        El nombre es parecido porque en el momento en el que se lanzo JavaScript, Java estaba de moda, así
+                        que fue una decisión de marketing el ponerle ese nombre, se iba a llamar Mocha.
+                    </li>
+                </ul>
+
+            </p>
+            <h3>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h3>
+            <ul>
+                <li>
+                    <code><strong>Date.UTC(...)</strong></code> Recibe como argumento una fecha en valores de año, mes, dia, horas, etc...
+                    y regresa la cantidad de mili segundos desde la media noche del 1ero de enero de 1970 y la fecha especificada.
+                </li>
+                <li>
+                    <code><strong>Date.now()</strong></code> No recibe ningún argumento y regresa la cantidad de milisegundos desde 
+                    la media noche del 1ero de enero de 1970.
+                </li>
+                <li>
+                    <code><strong>Date.parse(s: string)</strong></code> Recibe un string con una fecha y regresa la cantidad de 
+                    milisegundos desde la media noche del 1ero de enero de 1970.
+                </li>
+                <li>
+                    <code><strong>new Date().getFullYear()</strong></code> Regresa el año actual.
+                </li>
+                <li>
+                    <code><strong>new Date().getMonth()</strong></code> Regresa el mes actual.
+                </li>
+            </ul>
+
+            <h3>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h3>
+            <ul>
+                <li>
+                    <code><strong>forEach()</strong></code> recibe como argumento una función que se corre para cada uno de los 
+                    elementos del arreglo.
+                </li>
+    
+                <li>
+                    <code><strong>pop()</strong></code> remueve el último elemento del arreglo.
+                </li>
+    
+                <li>
+                    <code><strong>push(...items)</strong></code> agrega los elementos que se le pasen al método al final del arreglo.
+                </li>
+    
+                <li>
+                    <code><strong>join(separator)</strong></code> pasa todos los elementos del arreglo a una string con el 
+                    separador especificado, si no se especifica ningún separador por defecto será la <strong>,</strong> (coma).
+                </li>
+                
+                <li>
+                    <code><strong>concat(...items)</strong></code> combinar dos o más arrays en uno nuevo sin modificar 
+                    ninguno de los originales.
+                </li>
+            </ul>
+            
+            <h3>¿Cómo se declara una variable con alcance local dentro de una función?</h3>
+            <p>
+                Usando <code>var</code> antes del nombre de la variable.
+            </p>
+            <h3>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h3>
+            <p>
+                Que podemos accerder o modificar informacion que probablemente deba estar más segura y cause efectos
+                secundarios y comportamientos no deseados si se modifica.
+            </p>
+
+        </article>
+        <article>
+          <h1 id="material-design">¿Qué es Material design?</h1>
+            <p>
+                Material Design por su definición más popular "Es una guía de diseño visual interactivo", básicamente una
+                serie de sujerencias para el diseño de una aplicación. <br>
+                Este diseño surje de la inconsistencia que pueden tener ciertos desarrolladores al diseñar sus interfaces 
+                gráficas, esta guía busca generalizar y estandarizar el cómo se tienen que ver las aplicaciones para poder
+                tener un diseño consistente y entendible entre todas estas. Google hace bastante uso de estas guías para 
+                sus aplicaciones que desarrolla para android.
+            </p>
+        </article>
+    </section>
+    <footer class="content section">
+        <h2>Editor de texto: <a target="_blank" href="https://code.visualstudio.com/">Visual Studio Code ✨</a></h2>
+    </footer>
+    <button onclick="returnToTop()" id="topButton" class="button is-info" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99;">
+    Top
+  </button>
 </body>
 </html>
+
