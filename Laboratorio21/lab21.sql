@@ -58,17 +58,108 @@ HAVING avg(E.cantidad) > 450 OR avg(E.cantidad) < 370
 ORDER BY avg(E.cantidad) desc;
 
 /*
-Materiales(Clave, Descripción, Costo, PorcentajeImpuesto)
-Proveedores(RFC, RazonSocial)
-Proyectos(Numero, Denominacion)
-Entregan(Clave, RFC, Numero, Fecha, Cantidad)
-*/
-
-/*
 Considerando que los valores de tipos CHAR y VARCHAR deben ir encerrados entre 
     apóstrofes, los valores numéricos se escriben directamente y los de fecha, 
     como '1-JAN-00' para 1o. de enero del 2000, inserta cinco nuevos materiales.
 */
 
 INSERT INTO materieales (clave, descripcion, precio, porcentajeimpuesto) VALUES
-()
+(2001, 'Tubo de cobre 3/16', 320, 8),
+(2002, 'Impermeabilizante rojo', 520, 10),
+(2003, 'Pintura B2010', 125, 16),
+(2004, 'Madera 3/2', 240, 7),
+(2005, 'Codo de cobre 3/16', 320, 8);
+
+/*
+Clave y descripción de los materiales que nunca han sido entregados.
+*/
+SELECT M.clave, M.descripcion 
+FROM materiales M
+WHERE M.clave NOT IN (SELECT DISTINCT clave FROM entregan);
+
+-- Con joins
+SELECT M.clave, M.descripcion 
+FROM materiales M
+LEFT JOIN entregan E
+ON M.clave = E.clave
+WHERE E.clave IS NULL;
+
+/*
+Razón social de los proveedores que han realizado entregas tanto al 
+    proyecto 'Vamos México' como al proyecto 'Querétaro Limpio'.
+*/
+
+SELECT razonsocial 
+FROM proveedores
+WHERE rfc IN (
+	SELECT rfc 
+	FROM entregan 
+	WHERE numero IN (
+		SELECT numero 
+		FROM proyectos 
+		WHERE denominacion = 'Vamos Mexico' 
+		   OR denominacion = 'Queretaro limpio'));
+
+-- Sin sub-consultas 
+SELECT DISTINCT PR.razonsocial
+FROM proveedores PR, entregan E, proyectos P
+WHERE PR.rfc = E.rfc AND E.numero = P.numero 
+  AND (P.denominacion = 'Vamos Mexico' OR P.denominacion = 'Queretaro limpio');
+
+/*
+Descripción de los materiales que nunca han sido entregados al proyecto 'CIT 
+    Yucatán'.
+*/
+
+SELECT descripcion
+FROM materiales
+WHERE clave NOT IN (
+	SELECT clave
+	FROM entregan
+	WHERE numero IN(
+		SELECT numero
+		FROM proyectos
+		WHERE denominacion = 'CIT Yucatan'));
+
+/*
+Razón social y promedio de cantidad entregada de los proveedores cuyo promedio 
+    de cantidad entregada es mayor al promedio de la cantidad entregada por el 
+    proveedor con el RFC 'VAGO780901'.
+*/
+
+SELECT razonsocial
+FROM (
+	SELECT P.razonsocial , P.rfc, avg(E.cantidad) 
+	FROM entregan E, proveedores P
+	WHERE P.rfc = E.rfc
+	GROUP BY rfc
+	HAVING avg(E.cantidad) > (
+		SELECT avg(cantidad)
+		FROM entregan
+		WHERE rfc = 'HHHH800101'
+)) AS T;
+
+/*
+Materiales(Clave, Descripción, Costo, PorcentajeImpuesto)
+Proveedores(RFC, RazonSocial)
+Proyectos(Numero, Denominacion)
+Entregan(Clave, RFC, Numero, Fecha, Cantidad)
+*/
+/*
+RFC, razón social de los proveedores que participaron en el proyecto 'Infonavit 
+    Durango' y cuyas cantidades totales entregadas en el 2000 fueron mayores a 
+    las cantidades totales entregadas en el 2001.
+*/
+SELECT A.razonsocial
+FROM 
+	(SELECT P.rfc, P.razonsocial, sum(E.cantidad) AS 'total'
+	FROM proveedores P, entregan E
+	WHERE P.rfc = E.rfc AND E.fecha BETWEEN '2000-01-01' AND '2000-12-31'
+	GROUP BY P.rfc) A,
+	(SELECT P.rfc, P.razonsocial, sum(E.cantidad) AS 'total'
+	FROM proveedores P, entregan E
+	WHERE P.rfc = E.rfc AND E.fecha BETWEEN '2001-01-01' AND '2001-12-31'
+	GROUP BY P.rfc) B
+WHERE A.total > B.total AND A.rfc = B.rfc AND A.rfc IN (
+	SELECT rfc FROM entregan WHERE numero IN (
+		SELECT numero FROM proyectos WHERE denominacion = 'Infonavit Durango'));
