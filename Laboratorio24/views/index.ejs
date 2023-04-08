@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Galería</title>
+</head>
+<body>
+    <div class="space-even">
+        <h1>hi</h1>
+        <form id="file-input" action="upload" method="post" enctype="multipart/form-data">
+            <label for="input-photo" class="input-photo-label">
+                <input type="file" name="photo" accept=".gif,.jpg,.jpeg,.png,.webp" id="input-photo" class="input-photo">
+                <span id="file-name">Upload photo</span>
+            </label>
+            <button type="button" id="submit-button" class="submit-button" onclick="sendFile()" disabled>
+                send
+            </button>
+        </form>
+    </div>
+    <div class="grid" id="grid"></div>
+    <script defer src="/scripts/script.js"></script>
+</body>
+</html>
