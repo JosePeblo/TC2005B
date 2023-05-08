@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Nasa photos</title>
+</head>
+<body>
+    <h1>Nasa photos:</h1>
+    <p class="title">
+        Select the <b>rover</b> and the <b>sol</b> "martian day" you want to see photos of
+    </p>
+    <div class="space-even">
+        <select id="rover">
+            <option value="curiosity">Curiosity</option>
+            <option value="opportunity">Opportunity</option>
+            <option value="spirit">Spirit</option>
+        </select>
+        <h1>
+            <span>
+                sol:
+            </span>
+            <input type="text" id="sol" value="1000">
+        </h1>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="space-even">
+        <h1 id="no-photos" style="display: none;">No photos</h1>
+    </div>
+    <script defer src="script.js"></script>
+</body>
+</html>
